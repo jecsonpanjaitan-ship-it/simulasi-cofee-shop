@@ -96,7 +96,7 @@ class CoffeeShopSimulation:
     """
     
     def __init__(self, num_baristas=2, duration_min=480,
-                 arrival_rate=20, service_mean=3.0, seed=42):
+                  arrival_rate=20, service_mean=3.0, seed=42):
         self.num_baristas = num_baristas
         self.duration_min = duration_min
         self.arrival_rate = arrival_rate
@@ -622,7 +622,7 @@ with tab5:
         ax.plot(ts_hours, sim.queue_lengths, color='#D84315', linewidth=1.5, alpha=0.8)
         ax.fill_between(ts_hours, sim.queue_lengths, alpha=0.2, color='#D84315')
         ax.axhline(np.mean(sim.queue_lengths), color='navy', linestyle='--', linewidth=2, 
-                   label=f'Rata-rata: {np.mean(sim.queue_lengths):.2f}')
+                    label=f'Rata-rata: {np.mean(sim.queue_lengths):.2f}')
         ax.set_xlabel('Waktu (jam)', fontsize=11)
         ax.set_ylabel('Panjang Antrian (pelanggan)', fontsize=11)
         ax.set_title(f'Panjang Antrian Sepanjang Waktu ({num_baristas} Barista)', fontsize=12, fontweight='bold')
@@ -638,9 +638,9 @@ with tab5:
         if sim.wait_times:
             ax.hist(sim.wait_times, bins=30, color='#1976D2', edgecolor='white', alpha=0.8, density=True)
             ax.axvline(np.mean(sim.wait_times), color='red', linestyle='--', linewidth=2, 
-                       label=f'Mean: {np.mean(sim.wait_times):.2f} mnt')
+                        label=f'Mean: {np.mean(sim.wait_times):.2f} mnt')
             ax.axvline(np.median(sim.wait_times), color='orange', linestyle=':', linewidth=2,
-                       label=f'Median: {np.median(sim.wait_times):.2f} mnt')
+                        label=f'Median: {np.median(sim.wait_times):.2f} mnt')
         ax.set_xlabel('Waktu Tunggu (menit)', fontsize=11)
         ax.set_ylabel('Densitas', fontsize=11)
         ax.set_title('Distribusi Waktu Tunggu Pelanggan', fontsize=12, fontweight='bold')
